@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "react-native";
+import React from "react";
+import Restaurants from "./src/screens/Restaurants.screen";
+import styled from "styled-components/native";
 
-export default function App() {
+const Container = styled.SafeAreaView`
+  flex: 1;
+  background-color: #fff;
+`;
+
+const App: React.FC<{}> = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Container>
+      <StatusBar backgroundColor="red" barStyle="light-content" />
+      <Restaurants />
+    </Container>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
