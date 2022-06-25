@@ -3,13 +3,15 @@ import React from "react";
 import { Restaurant } from "../../../types";
 import { Card, Paragraph } from "react-native-paper";
 import styled from "styled-components/native";
+import {StyledProps} from "../../../types";
 
 type Props = {
   restaurant: Restaurant
 };
 
+
 const Title = styled.Text`
-  color: #FF0000;
+  color: ${(props: StyledProps) => props.theme.colors.ui.primary};
   font-size: 20px;
 `;
 

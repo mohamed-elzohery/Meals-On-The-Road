@@ -1,3 +1,5 @@
+import { DefaultTheme } from "./src/infrastructure";
+
 export type Restaurant = {
   name: string;
   icon: string;
@@ -7,3 +9,7 @@ export type Restaurant = {
   rating: number;
   isClosedTemporarily: boolean;
 };
+
+export type StyledProps = {
+  theme: DefaultTheme;
+}
