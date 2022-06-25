@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Searchbar } from "react-native-paper";
 import RestaurantInfo from "../components/restaurants/RestaurantInfo";
 import styled from "styled-components/native";
+import { StyledProps } from "../../types";
 
 const SearchContainer = styled.View`
   background-color: #fff;
-  padding: 16px;
+  padding: ${(props: StyledProps) => props.theme.space[3]};
 `;
 
 const ListContainer = styled.View`
-  padding: 16px 12px;
+  padding: ${(props: StyledProps) => props.theme.space[3]};
 `;
 
 const Restaurants: React.FC<{}> = () => {

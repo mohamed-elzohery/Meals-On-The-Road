@@ -12,11 +12,11 @@ type Props = {
 
 const Title = styled.Text`
   color: ${(props: StyledProps) => props.theme.colors.ui.primary};
-  font-size: 20px;
+  font-size: ${(props: StyledProps) => props.theme.fontSizes.title};
 `;
 
 const CoverImage = styled(Card.Cover)`
-  padding: 12px;
+  padding: ${(props: StyledProps) => props.theme.space[3]};
   background-color: #FFF;
  `;
 
