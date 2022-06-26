@@ -33,13 +33,11 @@ const Restaurants: React.FC<{}> = () => {
     isClosedTemporarily: true,
   };
   //  Temporary Code
-  const allRestaurats = new Array(10)
-    .fill("")
-    .map((item, index) => {
-      item = {...restaurant}
-      item.id = index.toString();
-      return item;
-    });
+  const allRestaurats = new Array(10).fill("").map((item, index) => {
+    item = { ...restaurant };
+    item.id = index.toString();
+    return item;
+  });
 
   return (
     <>
