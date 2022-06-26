@@ -27,7 +27,7 @@ const Restaurants: React.FC<{}> = () => {
     address: "Tanta, Egypt",
     isOpenNow: true,
     rating: 4,
-    isClosedTemporarily: false,
+    isClosedTemporarily: true,
   };
 
   return (
