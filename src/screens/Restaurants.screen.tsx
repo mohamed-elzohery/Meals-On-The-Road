@@ -3,6 +3,7 @@ import { Searchbar } from "react-native-paper";
 import RestaurantInfo from "../components/restaurants/RestaurantInfo";
 import styled from "styled-components/native";
 import { StyledProps } from "../../types";
+import { FlatList } from "react-native";
 
 const SearchContainer = styled.View`
   background-color: #fff;
@@ -10,7 +11,9 @@ const SearchContainer = styled.View`
 `;
 
 const ListContainer = styled.View`
-  padding: ${(props: StyledProps) => props.theme.space[3]};
+  margin: ${(props: StyledProps) => props.theme.space[2]}
+    ${(props: StyledProps) => props.theme.space[3]};
+    flex: 1;
 `;
 
 const Restaurants: React.FC<{}> = () => {
@@ -21,7 +24,7 @@ const Restaurants: React.FC<{}> = () => {
   };
 
   const restaurant = {
-    name: "Ahmed Mohamed",
+    name: "El Watanya Food Restaurant",
     icon: "https://dfsdfsdfsdf.com",
     photos: ["https://picsum.photos/700"],
     address: "Tanta, Egypt",
@@ -29,6 +32,14 @@ const Restaurants: React.FC<{}> = () => {
     rating: 4,
     isClosedTemporarily: true,
   };
+  //  Temporary Code
+  const allRestaurats = new Array(10)
+    .fill("")
+    .map((item, index) => {
+      item = {...restaurant}
+      item.id = index.toString();
+      return item;
+    });
 
   return (
     <>
@@ -40,7 +51,11 @@ const Restaurants: React.FC<{}> = () => {
         />
       </SearchContainer>
       <ListContainer>
-        <RestaurantInfo restaurant={restaurant} />
+        <FlatList
+          data={allRestaurats}
+          renderItem={({ item }) => <RestaurantInfo restaurant={item} />}
+          keyExtractor={({ id }) => id}
+        />
       </ListContainer>
     </>
   );
