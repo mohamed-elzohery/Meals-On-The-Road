@@ -33,10 +33,11 @@ const RestaurantCard = styled(Card)`
   background-color: #FFF;
   border-width: 1px;
   border-color: #CCC;
+  margin: ${(props: StyledProps) => props.theme.space[2]};
 `;
 
 const CardContent = styled(Card.Content)`
-  margin-top: ${(props: StyledProps) => props.theme.space[2]};
+  margin-top: ${(props: StyledProps) => props.theme.space[2]} 0;
 `;
 
 const Rating = styled.View`
@@ -72,7 +73,7 @@ const RestaurantInfo: React.FC<Props> = ({ restaurant }) => {
         <Title>{name}</Title>
         <Row>
         <Rating>
-          {new Array(Math.ceil(rating)).fill().map((_, index) => <StarIcon name="star" size={20} color="yellow" key={index}/>)}
+          {new Array(Math.ceil(rating)).fill("").map((_, index) => <StarIcon name="star" size={20} color="yellow" key={index}/>)}
         </Rating>
           {isOpenNow && <OpenContainer>
             <SvgXml xml={Open} width={20} height={20} />
